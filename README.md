@@ -1,38 +1,120 @@
-# climate_dashboard
-A dashboard for climate analysis
-# Climate Intelligence Dashboard
+# Climate Analytics and Prediction Dashboard
 
-## Overview
+##  Project Description
 
-The Climate Intelligence Dashboard is an interactive web application developed using R Shiny to analyze global climate change trends. It enables users to explore temperature anomalies and CO₂ emissions across different countries and time periods through dynamic visualizations and key performance indicators.
+The **Climate Analytics and Prediction Dashboard** is an interactive web application developed using **R Shiny**. The application is designed to analyze historical climate data and provide meaningful insights into temperature trends, CO₂ emissions, and their relationship.
+
+In addition to descriptive and exploratory analysis, the dashboard integrates a **Machine Learning model** to forecast future temperature trends, enabling predictive analysis of climate patterns.
 
 
+##  Objectives
 
-## Key Features
-
-* Country-wise filtering and analysis
-* Interactive time-series visualization of temperature trends
-* CO₂ emissions trend analysis
-* Correlation analysis between temperature and CO₂ emissions
-* Comparative analysis of country vs global trends
-* Identification of top 5 hottest years
-* Interactive data table for detailed exploration
+* To analyze historical temperature variations across different countries
+* To study the impact of CO₂ emissions on temperature changes
+* To compare country-specific trends with global climate patterns
+* To identify extreme temperature years
+* To implement a Machine Learning model for future prediction
 
 
 
-## Technology Stack
+##  Tools and Technologies
 
-* **Programming Language:** R
-* **Framework:** Shiny, shinydashboard
-* **Visualization:** ggplot2, plotly
-* **Data Manipulation:** dplyr
-* **Tables:** DT
+* **R Programming Language**
+* **Shiny** – Web application framework
+* **shinydashboard** – Dashboard layout and UI design
+* **ggplot2** – Data visualization
+* **plotly** – Interactive visualizations
+* **dplyr** – Data manipulation
+* **DT** – Interactive data tables
+* **caret** – Machine Learning framework
 
 
 
-## Dataset
+##  Key Features
 
-The application utilizes a global climate dataset spanning from 1900 to 2023. The dataset includes the following attributes:
+### 1. Key Performance Indicators (KPIs)
+
+* Average Temperature
+* Maximum Temperature
+* Minimum Temperature
+* Temperature Change over selected period
+* Correlation between CO₂ emissions and temperature
+
+
+
+### 2. Trend Analysis
+
+* Visualization of temperature trends over time
+* Analysis of CO₂ emission patterns
+
+
+
+### 3. Relationship Analysis
+
+* Scatter plot illustrating the relationship between CO₂ emissions and temperature
+* Regression line to understand correlation trends
+
+
+
+### 4. Global Comparison
+
+* Comparative analysis between selected country and global temperature trends
+
+
+### 5. Data Exploration
+
+* Display of top 5 hottest years
+* Interactive table of filtered dataset
+
+
+
+### 6. Machine Learning Prediction
+
+* Implementation of **Multiple Linear Regression** using the `caret` package
+* Prediction of temperature trends for the next 10 years
+* Model based on:
+
+  * Year
+  * CO₂ Emissions
+
+
+
+##  Machine Learning Methodology
+
+The predictive component of the application uses a **Multiple Linear Regression model**, trained using historical data.
+
+* **Dependent Variable:** Temperature Anomaly
+* **Independent Variables:** Year, CO₂ Emissions
+
+The model is trained using the `caret` package and applied to forecast future temperature values, providing insights into potential climate trends.
+
+
+
+##  How to Run the Application
+
+1. Install required packages:
+
+
+install.packages(c("shiny", "shinydashboard", "ggplot2", "dplyr", "plotly", "DT", "slider", "caret"))
+
+
+2. Ensure the dataset is placed in the project directory:
+
+
+archive (13)/global_warming_dataset.csv
+
+
+3. Run the application:
+
+
+shinyApp(ui, server)
+
+
+
+
+##  Dataset Information
+
+The dataset contains historical climate data, including:
 
 * Country
 * Year
@@ -40,55 +122,32 @@ The application utilizes a global climate dataset spanning from 1900 to 2023. Th
 * CO₂ Emissions
 
 
-## Installation and Setup
 
-### 1. Clone the Repository
+##  Results
 
-bash
-git clone https://github.com/your-username/climate-dashboard.git
+The dashboard enables:
 
-
-### 2. Open in RStudio
-
-Open the project folder in RStudio.
-
-### 3. Install Required Packages
-
-r
-install.packages(c("shiny", "shinydashboard", "ggplot2", "plotly", "dplyr", "DT"))
+* Interactive filtering and visualization
+* Insightful analysis of climate trends
+* Identification of relationships between variables
+* Prediction of future temperature patterns
 
 
-### 4. Run the Application
+##  Conclusion
 
-r
-shiny::runApp()
+This project demonstrates the integration of **data analytics and machine learning** techniques to analyze and predict climate behavior. The application provides an intuitive interface for exploring complex datasets and deriving actionable insights.
 
 
 
+##  Author
 
-## Usage
-
-* Select a country from the dropdown menu
-* Adjust the year range using the slider
-* Analyze trends, correlations, and insights through interactive charts and metrics
+Kartika Dhanulkar And Suyash Vaidya
 
 
 
-## Project Objective
+##  Future Enhancements
 
-The objective of this project is to provide a comprehensive and interactive platform for analyzing climate change indicators, helping users understand long-term trends and relationships between temperature variations and CO₂ emissions.
-
-
-
-## Future Enhancements
-
-* Integration of predictive analytics and forecasting models
-* Interactive geographical visualizations (maps)
-* Automated insights and anomaly detection
-* Deployment as a live web application
-
-
-
-## Author
-Kartika Dhanulkar And 
-Suyash Vaidya
+* Integration of advanced models such as Random Forest and Time Series (ARIMA)
+* Inclusion of geographical visualizations (maps)
+* Multi-country comparative analysis
+* Model performance evaluation metrics (R², RMSE)
